@@ -35,10 +35,9 @@ public class PaiementController {
     }
 
     @RequestMapping(value= "/Paiement/add", method = RequestMethod.POST)
-    public String add(int id, @DateTimeFormat(pattern = "yyyy-MM-dd") Date datePaiement, String montantPaiement, int idDeclaration) {
+    public String add( @DateTimeFormat(pattern = "yyyy-MM-dd") Date datePaiement, String montantPaiement, int idDeclaration) {
         ModelAndView modelAndView= new ModelAndView();
         Paiement paiement = new Paiement();
-        paiement.setId(id);
         paiement.setDatePaiement(datePaiement);
         paiement.setMontantPaiement(Double.parseDouble(montantPaiement));
         Declaration declaration =new Declaration();

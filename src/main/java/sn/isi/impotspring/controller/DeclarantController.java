@@ -25,9 +25,10 @@ public class DeclarantController {
     }
 
     @RequestMapping(value="/Declarant/add", method = RequestMethod.POST)
-    public String add(int id, String raisonSociale, String adresse, String email, String telephone) {
+    public String add( String nom, String prenom, String raisonSociale, String adresse, String email, String telephone) {
         Declarant declarant = new Declarant();
-        declarant.setId(id);
+        declarant.setNom(nom);
+        declarant.setPrenom(prenom);
         declarant.setRaisonSociale(raisonSociale);
         declarant.setAdresse(adresse);
         declarant.setEmail(email);

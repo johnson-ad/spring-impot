@@ -35,10 +35,9 @@ public class DeclarationController {
     }
 
     @RequestMapping(value="/Declaration/add", method = RequestMethod.POST)
-    public String add(int  id, @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateDeclaration, String montantDeclaration, int  idDeclarant) {
+    public String add( @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateDeclaration, String montantDeclaration, int  idDeclarant) {
         ModelAndView modelAndView= new ModelAndView();
         Declaration declaration = new Declaration();
-        declaration.setId(id);
         declaration.setDateDeclaration(dateDeclaration);
         declaration.setMontantDeclaration(Double.parseDouble(montantDeclaration));
         Declarant declarant = new Declarant();
